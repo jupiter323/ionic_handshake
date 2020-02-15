@@ -1,0 +1,16 @@
+<ion-content>
+    <div class="header">
+        <h3>Chats</h3>
+    </div>
+
+    <ion-list *ngIf="chatList?.length > 0">
+        <ion-item *ngFor="let chat of chatList" (click)="openChat(chat)">
+            <img src="{{ chat.val.displayImg }}" />
+            <label>{{ chat.val.displayName }}</label>
+            <ion-icon name="chatboxes" item-end></ion-icon>
+        </ion-item>
+    </ion-list>
+    <div *ngIf="chatList?.length == 0" style="width:100%;position:absolute;top:40%;text-align:center;color:darkgray">
+        <h2>No chats.</h2>
+    </div>
+</ion-content>

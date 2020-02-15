@@ -1,0 +1,92 @@
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div class="header-div">
+        <ion-row *ngIf="!nav_data" class="header-container">
+            <ion-col col-2>
+                <ion-avatar class=header-image-avatar (click)="gotoAccountPage()">
+                    <img *ngIf="!user_profile_picture" class="header-img-avatar" src="assets/imgs/default.png">
+                    <img *ngIf="user_profile_picture" class="header-img-avatar" [src]="user_profile_picture">
+
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-8>
+                <ion-searchbar #search placeholder="" [(ngModel)]="searchKey" [showCancelButton]="  "
+                    (ionInput)="setFilteredItems()"> 
+                </ion-searchbar>
+            </ion-col>
+            <ion-col col-1>
+                <!-- <button ion-button small clear> -->
+                <ion-icon (click)="setFilteredItems()" class="header-icon" name="search"></ion-icon>
+                <!-- </button> -->
+
+            </ion-col>
+            <ion-col col-1>
+                <!-- <button ion-button small clear> -->
+                <ion-icon (click)="showMap()" class="header-icon" name="pin"></ion-icon>
+                <!-- </button> -->
+            </ion-col>
+        </ion-row>
+        <img *ngIf="!nav_data" class="logo-img" src="assets/imgs/logo.png" />
+        <ion-row *ngIf="nav_data" class="header-container">
+            <ion-col col-11>
+                <ion-searchbar #search placeholder="" [(ngModel)]="searchKey" [showCancelButton]="  "
+                    (ionInput)="setFilteredItems()">
+                </ion-searchbar>
+            </ion-col>
+            <ion-col col-1>
+                <!-- <button ion-button small clear> -->
+                <ion-icon (click)="setFilteredItems()" class="header-icon" name="search"></ion-icon>
+                <!-- </button> -->
+
+            </ion-col>
+        </ion-row>
+
+
+        <div *ngIf="items?.length > 0">
+
+            <div class="cardDiv" *ngFor="let item of items" (click)="showDetails(item)">
+                <p class=item-name>{{ item.itemName }}</p>
+                <ion-slides pager>
+                    <ion-slide>
+                        <img class="itemImg" src="{{ item.url }}" />
+
+                    </ion-slide>
+                    <ion-slide *ngIf='item.url2'>
+                        <img class="itemImg" [src]="item.url2" />
+                    </ion-slide>
+                    <ion-slide *ngIf='item.url3'>
+                        <img class="itemImg" [src]="item.url3" />
+                    </ion-slide>
+                </ion-slides>
+                <!-- <p class="price-tag">
+                  
+                    ${{ item.pricePerDay }}/day
+                </p> -->
+                <ion-badge class="price-tag" item-end>${{ item.pricePerDay }}/day</ion-badge>
+
+                <!-- <p style="float:right;color:#9b9b9b;">0.2mi</p> -->
+                <div class="user-container">
+
+
+
+                    <ion-avatar class=image-avatar>
+                        <img *ngIf="!item.user_data.profilePic" class="img-avatar" src="assets/imgs/default.png">
+                        <img *ngIf="item.user_data.profilePic" class="img-avatar" [src]="item.user_data.profilePic">
+
+                    </ion-avatar>
+                    <span class="user-name">
+                        {{item.user_data.displayName}}
+                    </span>
+
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="items?.length == 0" style="width:100%; text-align:center">
+            <h5>No Items Found.</h5>
+        </div>
+    </div>
+</ion-content>

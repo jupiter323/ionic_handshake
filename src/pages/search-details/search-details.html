@@ -1,0 +1,145 @@
+<!-- <ion-header no-border>
+
+        <ion-navbar transparent>
+          <button class="menu-icon" ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-navbar>
+
+      </ion-header> -->
+
+<ion-content>
+
+    <div>
+        <button (click)="navigatePreviousPage()" class="header-icon-btn" clear ion-button>
+            <ion-icon name="ios-arrow-dropleft"></ion-icon>
+        </button>
+        <button *ngIf="global.USER_ID === item.userId" (click)="presentProductPopover($event)" class="more-button header-icon-btn" clear ion-button>
+            <ion-icon name="more"></ion-icon>
+        </button>
+        <ion-slides pager="true" paginationType="{{global.USER_ID === item.userId ? 'progress' : 'bullets'}}">
+            <ion-slide>
+                <img class="slide-image" src="{{item.url}}" />
+            </ion-slide>
+            <ion-slide *ngIf='item.url2'>
+                <img class="slide-image" [src]="item.url2" />
+            </ion-slide>
+            <ion-slide *ngIf='item.url3'>
+                <img class="slide-image" [src]="item.url3" />
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <div>
+        <div class="items">
+            <ion-row>
+                <ion-col col-8>
+                    <h1>{{item.itemName}}</h1>
+                    <p>{{item.location}}</p>
+
+                </ion-col>
+                <ion-col (click)="openProfilePage(item)" col-4>
+                    <ion-avatar class=image-avatar>
+                        <img *ngIf="!item.user_data.profilePic" class="img-avatar" src="assets/imgs/default.png">
+                        <img *ngIf="item.user_data.profilePic" class="img-avatar" [src]="item.user_data.profilePic">
+                    </ion-avatar>
+                    <p class="user-name user-name-css">{{item.user_data.displayName}}</p>
+                    <ion-note *ngIf="alreadyFriend" style="font-size: 10pt;">Already Friend</ion-note>
+                </ion-col>
+            </ion-row>
+        </div>
+
+        <!-- <h1>{{item.itemName}}</h1>
+        <div class="container">
+            <div class="tags">
+                <p>{{item.location}}</p>
+            </div>
+            <div class="tags">
+                <p>${{item.pricePerHour}}/hour</p>
+            </div>
+            <div class="tags">
+                <p>${{item.pricePerDay}}/day</p>
+            </div>
+    </div>-->
+        <div class="items item-desctiption">
+            <p *ngIf="item.description.length<=text_limit">{{item.description}}</p>
+            <p *ngIf="item.description.length>=text_limit">{{first_description}}<span class="read-span"
+                    *ngIf="is_read_more" (click)="readClick(false)">...Read More</span><span
+                    *ngIf="!is_read_more">{{second_description}}<span class="read-span" (click)="readClick(true)">Read
+                        Less</span></span></p>
+        </div>
+        <div class="items">
+
+            <ion-row>
+
+                <ion-col  (click)="openProfilePage(item)" col-3>
+                    <ion-avatar class=image-avatar>
+                        <img *ngIf="!item.user_data.profilePic" class="img-avatar" src="assets/imgs/default.png">
+                        <img *ngIf="item.user_data.profilePic" class="img-avatar" [src]="item.user_data.profilePic">
+                    </ion-avatar>
+
+                </ion-col>
+                <ion-col  (click)="openProfilePage(item)" col-5>
+                    <p class="user-name update-css-username">{{item.user_data.displayName}}</p>
+                    <ionic3-star-rating readonly="true" activeIcon="ios-star" defaultIcon="ios-star-outline"
+                        activeColor="#488aff" fontSize="14px" defaultColor="#111" readonly="true" [rating]="3"
+                        (ratingChanged)="logRatingChange($event)">
+                    </ionic3-star-rating>
+                </ion-col>
+
+                <!-- <ion-col col-1>
+                </ion-col> -->
+                <ion-col col-2>
+                    <button *ngIf="!alreadyFriend" class="items-icon-btn" clear ion-button (click)="addFriends()">
+                        <ion-icon class="items-icon" name="md-person-add"></ion-icon>
+                    </button>
+
+
+                </ion-col>
+                <ion-col col-2>
+                    <button class="items-icon-btn" clear ion-button (click)="gotoChatPage()">
+                        <ion-icon class="items-icon" name="ios-mail-outline"></ion-icon>
+
+                    </button>
+
+                </ion-col>
+
+            </ion-row>
+        </div>
+        <div>
+            <h3 class="map-header">Item Location</h3>
+            <div #map id="map" class="map_div"></div>
+        </div>
+
+        <!-- <div class="container">
+            <ion-avatar>
+                <img class="profileImg" src="{{item.ownerImg}}"> </ion-avatar>
+            <div style="width:80%">
+                <p class="owner"><b>Owned by <label style="color: 	#2165CE">{{item.owner}}</label></b></p>
+            </div>
+        </div>
+        <br>
+        <hr class="lineFull">
+        <button class="btnRent" (click)="rentItem()">Rent this item</button>
+        <p class="bottomText"><b>You won't be charged yet</b></p> -->
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col col-6>
+                <p class="footer-user-name">$<b>{{item.pricePerDay}} </b> per day, $<b>{{item.costToReplace}} </b> cost to replace</p>
+                <ionic3-star-rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#488aff"
+                    fontSize="14px" defaultColor="#111" readonly="true" [rating]="3"
+                    (ratingChanged)="logRatingChange($event)">
+                </ionic3-star-rating>
+
+            </ion-col>
+            <ion-col col-6>
+                <button class="footer-btn-rent" (click)="rentItem()">RENT</button>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

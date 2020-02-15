@@ -1,0 +1,22 @@
+<ion-content>
+
+  <ion-icon class="closeModal" name="close-circle" (click)="closeModal()"></ion-icon>
+
+  <div style="text-align: center;" [hidden]="signInBool">
+    <input style="margin-top: 20%;" class="inputField" type="email" placeholder="Email" name="email" [(ngModel)]="emailSignIn" required>
+    <input style="margin-top: 5%;" class="inputField" type="password" placeholder="Password" name="password" [(ngModel)]="passwordSignIn" required>
+    <br>
+    <button class="btnSignIn" (click)="signIn()">Sign In</button>
+    <p class="creatAccountText" (click)="goToSignUp()">Create an account?</p>
+  </div>
+
+  <div style="text-align: center;" [hidden]="signUpBool">
+    <input style="margin-top: 15%;" class="inputField" type="text" placeholder="Display Name" name="displayName" [(ngModel)]="displayName" required>
+    <input style="margin-top: 5%;" class="inputField" type="email" placeholder="Email" name="email" [(ngModel)]="emailSignUp" required>
+    <input style="margin-top: 5%;" class="inputField" type="password" placeholder="Password" name="password" [(ngModel)]="passwordSignUp" required>
+    <br>
+    <button class="btnSignIn" (click)="signUp()">Create an account</button>
+    <p class="creatAccountText" (click)="goToSignIn()">Login?</p>
+  </div>
+
+</ion-content>

@@ -1,0 +1,302 @@
+page-post {
+    background-color: rgba(0, 0, 0, 0.664);
+
+    ion-content.content {
+
+        // top: 15%;
+        // /* left: 10%; */
+        // margin: auto;
+        // width: 95%;
+        // height: 73%;
+        // border-radius: 10px;
+        // position: relative !important;
+        .scroll-content {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+    }
+
+    .closeModal {
+        position: absolute;
+        right: 0%;
+        top: 0%;
+        padding: 2px;
+        font-size: 2em !important;
+        z-index: 9;
+    }
+
+    /* .MainDiv
+      {
+          text-align: center; 
+          margin-top: 20%;
+          padding: 0% 5% 0% 5%;
+      }
+  
+      p{
+          font-size: 20px;
+      }
+  
+      .container {
+          display: flex;
+      }
+  
+      .btnRentHourSelected
+      {
+          background-color: white;
+          height: 35px;
+          width: 100%;
+          color: #2165CE;
+          border: solid 2px;
+          border-radius: 25px;
+          text-align: center;
+          font-size: 15px;
+          margin: 10px;
+      }
+  
+      .btnRentHourUnSelected
+      {
+          background-color: white;
+          height: 35px;
+          width: 100%;
+          color: lightgray;
+          border-radius: 25px;
+          text-align: center;
+          font-size: 15px;
+          margin: 10px;
+      }
+  
+      .btnRentDaySelected
+      {
+          background-color: white;
+          height: 35px;
+          width: 100%;
+          color: #2165CE;
+          border: solid 2px;
+          border-radius: 25px;
+          text-align: center;
+          font-size: 15px;
+          margin: 10px;
+      }
+  
+      .btnRentDayUnSelected
+      {
+          background-color: white;
+          height: 35px;
+          width: 100%;
+          color: lightgray;
+          border-radius: 25px;
+          text-align: center;
+          font-size: 15px;
+          margin: 10px;
+      }
+  
+      .sendMsg
+      {
+          background-color: #2165CE;
+          height: 50px;
+          width: 90%;
+          color: white;
+          border-radius: 25px;
+          text-align: center;
+          font-size: 14px;
+          position: absolute; 
+          bottom: 5%; 
+          left: 5%;
+      } */
+    .main-container {
+        padding: 5px;
+    }
+
+    .update-css-username {
+        margin-bottom: 2px;
+        margin-top: 20px;
+        text-transform: capitalize;
+    }
+
+    .update-css-price {
+        font-family: sans-serif;
+        font-size: 16px;
+        margin: 7px 0 0 5px;
+    }
+
+    // .rating{
+    //     margin: 0px 0 0 5px;
+    // }
+    .swiper-pagination-bullet {
+        background: #111 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #fff !important;
+    }
+
+    .itemImg {
+        object-fit: cover;
+        height: 215px;
+        object-position: center;
+        margin-top: 20px;
+
+    }
+
+    ion-slides {
+        height: 240px;
+        width: 156px !important;
+    }
+
+    .slide-container {
+        width: 156px !important;
+        height: 240px;
+        top: 30px;
+    }
+
+    .swiper-wrapper {
+        height: 215px;
+        // top: 20px;
+    }
+
+    .swiper-container {
+        height: 240px;
+        // top: 20px;
+    }
+
+    .footer-btn-rent {
+        background-color: rgb(255, 242, 140);
+        height: 50px;
+        border-radius: 5px;
+        width: 95%;
+        color: black;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 10px;
+    }
+
+    .footer-div {
+        text-align: center;
+        border-top: 1px solid #d8d8d8;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+
+        .p-text {
+            margin-top: 25px;
+            font-size: 19px;
+            font-family: sans-serif;
+            color: #969696;
+        }
+    }
+
+    .item-price-detail {
+        color: #575757;
+        font-family: sans-serif;
+
+        .label {
+            font-weight: bold;
+        }
+    }
+
+    .details {
+        color: #575757;
+        font-family: sans-serif;
+    }
+
+    .item-price-cal {
+        color: #575757;
+        font-family: sans-serif;
+        text-align: right;
+
+        .label {
+            margin-top: 26px;
+        }
+    }
+
+    p.date-header {
+        font-weight: bold;
+    }
+
+    .rentPage-modal .modal-wrapper {
+        z-index: 10;
+        height: 100%;
+        contain: strict;
+        width: 94%;
+        height: 462px;
+        margin: auto;
+        margin-top: 10%;
+        border-radius: 10px;
+        position: absolute;
+        left: 3%;
+        right: 3%;
+    }
+
+    .header {
+        padding: 30px;
+        font-size: 25px;
+        font-family: sans-serif;
+    }
+
+    p.day {
+        font-size: 18px;
+        font-weight: 900;
+    }
+
+    p.month {
+        font-size: 22px;
+        font-weight: 900;
+
+    }
+
+    button.days-btn.on-selected {
+        background-color: rgb(238, 150, 11) !important;
+    }
+
+    .startSelection:after {
+        background-color: rgb(244, 194, 115) !important;
+    }
+
+    .primary .between button.days-btn {
+        background-color: rgb(244, 194, 115) !important;
+
+    }
+
+    .endSelection button.days-btn {
+        background-color: rgb(238, 150, 11) !important;
+
+    }
+
+    .endSelection:after {
+        background-color: rgb(244, 194, 115) !important;
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .rentPage-modal .modal-wrapper {
+        z-index: 10;
+        height: 100%;
+        contain: strict;
+        width: 94%;
+        height: 485px;
+        margin-top: 10%;
+        border-radius: 10px;
+        position: absolute;
+        left: 3%;
+        right: 3%;
+        top: calc(47% - (485px/2));
+
+    }
+
+}
+
+@media not all and (min-height: 600px) and (min-width: 768px) {
+    .rentPage-modal ion-backdrop {
+        visibility: unset;
+    }
+}
+
+.invite-sent .toast-wrapper.toast-middle {
+    top: calc(47% - (200px/2));
+    opacity: 1;
+    width: 200px;
+    height: 200px;
+}

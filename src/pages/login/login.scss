@@ -1,0 +1,48 @@
+page-login {
+    background-color: rgba(0, 0, 0, 0.75);
+    ion-content.content{
+        top: 30%;
+        left: 10%;
+
+        width: 80%;
+        height: 300px;
+        border-radius: 20px;
+        .scroll-content {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+    }
+
+    .closeModal
+    {
+        position: absolute;    
+        right: 0%;
+        top: 0%;
+        padding: 10px;
+        font-size: 2.0em !important;
+    }
+
+    .inputField
+    {
+        width: 90%;
+        padding: 12px 20px;
+        border: transparent;
+        border-bottom:1px solid gray ;
+    }
+
+    .btnSignIn {
+        background-color: #2165CE;
+        height: 40px;
+        width: 90%;
+        color: white;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 16px;
+        margin: 10px;
+    }
+    .creatAccountText{
+        text-align: center; 
+        color: primary;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>Add license Picture</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="body">
+        <label>Great! Real quick, for security purposes, please add your driver's license</label><br>
+        <img src="{{driversLicense}}"><br>
+        <div id="pwa">
+                <input type="file" id="pwa_photo" #pwa_photo accept="image/x-png,image/jpeg" (change)="uploadPWA()">
+            </div>
+        <button class="btnRent" (click)="uploadCameraHandler()">Add a driver's license picture</button>
+        <button class="btnRent" (click)="completeProfile()" [disabled]="completed">Complete profile</button>
+
+    </div>
+</ion-content>

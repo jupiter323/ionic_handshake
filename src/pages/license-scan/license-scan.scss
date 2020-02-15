@@ -1,0 +1,32 @@
+page-license-scan {
+    .body {
+        position: relative;
+        top: 30%;
+        width: 70% !important;
+        text-align: center;
+        left: 16%
+    }
+    .body img {
+        height: 140px !important;
+        position: relative;
+        margin-top: 10%;
+        margin-bottom: 20%;
+    }
+    label {
+        font-size: 10px !important;
+        font-weight: bold
+    }
+    .btnRent {
+        background-color: #2165CE;
+        height: 40px;
+        width: 90%;
+        color: white;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 12px;
+        margin: 10px;
+    }
+    div#pwa {
+        visibility: hidden;
+      }
+}

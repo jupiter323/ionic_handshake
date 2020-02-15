@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>103383459977-c7qlainmbjqunb7pk3gjn5hel60a8r1p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.103383459977-c7qlainmbjqunb7pk3gjn5hel60a8r1p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDkke5cbeW8eIgNg9UxZSZZz3TwgRw1duY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>103383459977</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vone.handshake</string>
+	<key>PROJECT_ID</key>
+	<string>handshake-f4f05</string>
+	<key>STORAGE_BUCKET</key>
+	<string>handshake-f4f05.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:103383459977:ios:84c3ce52ee3df796b1be58</string>
+	<key>DATABASE_URL</key>
+	<string>https://handshake-f4f05.firebaseio.com</string>
+</dict>
+</plist>

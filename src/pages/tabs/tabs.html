@@ -1,0 +1,8 @@
+<ion-tabs (ionChange)="onClickTab($event)">
+    <!--  TODO: on seach btn click enable input and open keypad-->
+    <ion-tab [root]="tab1Root" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab1Root" tabIcon="search" [rootParams]="nav_data"></ion-tab> 
+    <ion-tab [root]="add_root" tabIcon="md-add-circle"></ion-tab>
+    <ion-tab [root]="tab2Root" tabIcon="chatboxes"></ion-tab>
+    <ion-tab [root]="tab3Root" tabIcon="person"></ion-tab>
+</ion-tabs> 

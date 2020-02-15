@@ -1,0 +1,207 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title text-center>{{userName}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher> -->
+
+    <div class="user--bio-container">
+        <ion-row>
+            <ion-col col-4>
+                <ion-avatar class=image-avatar>
+                    <!-- <img *ngIf="!userProfilePic" class="img-avatar" src="assets/imgs/default.png"> -->
+                    <img class="img-avatar" [src]="userProfilePic">
+                    <ion-icon class="camera-icon" *ngIf="is_edit_profile" color="primary" name="md-camera"
+                              (click)="completeProfile()">
+                    </ion-icon>
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-4>
+                <p class="user-name update-css-username">{{userName}}</p>
+                <ionic3-star-rating readonly="true" activeIcon="ios-star" defaultIcon="ios-star-outline"
+                                    activeColor="#488aff" fontSize="14px" defaultColor="#111" readonly="true"
+                                    [rating]="3">
+                </ionic3-star-rating>
+            </ion-col>
+            <!-- <ion-col col-2>
+                <button class="items-icon-btn" clear ion-button>
+                    <ion-icon class="items-icon" name="md-person-add"></ion-icon>
+                </button>
+
+            </ion-col> -->
+            <ion-col col-2>
+                <button class="items-icon-btn" clear ion-button (click)="gotoChats()">
+                    <ion-icon class="items-icon" name="ios-mail-outline"></ion-icon>
+
+                </button>
+
+            </ion-col>
+
+        </ion-row>
+        <div *ngIf="!is_edit_profile" class="description">
+            <p *ngIf="profile_description && profile_description.length<=text_limit">{{profile_description}}</p>
+            <p *ngIf="profile_description && profile_description.length>=text_limit">{{first_description}}<span
+                    class="read-span" *ngIf="is_read_more" (click)="readClick(false)">...Read More</span><span
+                    *ngIf="!is_read_more">{{second_description}}<span class="read-span" (click)="readClick(true)">Read
+                        Less</span></span></p>
+        </div>
+        <div *ngIf="is_edit_profile" class="description">
+            <textarea id="textarea_id" name="textarea_name" class="text-area-style" type="text"
+                      [(ngModel)]="profile_description" value="{{profile_description}}"></textarea>
+            <ion-item>
+                <ion-input type="tel" [(ngModel)]="phone_number" placeholder="Phone number"></ion-input>
+            </ion-item>
+
+            <div class="action-btn">
+                <button (click)="saveDescription()" class="save-btn" ion-button small>Save</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="center-div">
+        <ion-list class="list-item">
+            <ion-list-header class="list-header">
+                {{userName}} Provided
+            </ion-list-header>
+            <ion-item>
+                <ion-label>Government ID</ion-label>
+                <ion-checkbox class="check-box" disabled="true" [checked]="is_government_id"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>Email Address</ion-label>
+                <ion-checkbox class="check-box" disabled="true" [checked]="is_email_id"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>Phone Number</ion-label>
+                <ion-checkbox class="check-box" disabled="true" [checked]="is_phone_number"></ion-checkbox>
+            </ion-item>
+
+        </ion-list>
+
+    </div>
+    <div class="items">
+        <ion-row>
+            <ion-col col-6>
+                <p><b>14,233</b> Connections</p>
+            </ion-col>
+            <ion-col col-6>
+                <ion-icon class="shake-icon" name="repeat"><b>32</b>Handshakes</ion-icon>
+
+            </ion-col>
+
+        </ion-row>
+        <ion-list>
+            <ion-item text-center>
+                <h1>Friends</h1>
+            </ion-item>
+
+            <ion-item *ngFor="let f of friendList">
+                {{f.val.displayName}}
+            </ion-item>
+        </ion-list>
+        <br>
+        <hr>
+        <br>
+        <ion-grid>
+
+            <ion-row>
+                <ion-col class="update-ion4" col-4 *ngFor="let item of listItemsLending; let i = index"
+                         (click)="showDetails(item)">
+                    <div *ngIf="i < 3">
+                        <img class="grid-img" [src]="item.url"/>
+                        <!-- <p class="price-tag">
+                            ${{ listItemsLending[i].pricePerDay }}/day
+                        </p> -->
+                        <ion-badge class="price-tag" item-end>${{ item.pricePerDay }}/day</ion-badge>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!-- <div *ngFor="let item of listItemsLending">
+
+                    <img src="{{item.url}}" />
+
+            </div> -->
+
+        <ion-scroll scrollX="true" style="width:100vw; height:30%" *ngIf="listItemsRenting?.length > 0">
+            <ion-row nowrap="nowrap" class="headerChip">
+                <div *ngFor="let item of listItemsRenting">
+                    <ion-chip>
+                        <img src="{{ item.url }}"/>
+                        <div></div>
+                    </ion-chip>
+                </div>
+            </ion-row>
+        </ion-scroll>
+
+    </div>
+
+
+    <!-- <div class="header">
+        <div (click)="signOut()" style="margin-top:10%">Signout</div>
+        <img (click)="completeProfile()" src="{{ userProfilePic }}" /><br />
+        <label>{{ userName }}</label
+    ><br />
+    <button ion-button outline round>Add Payment Method</button>
+  </div>
+  <div>
+    <div class="sub-header">
+      <h1>$ {{earnings}}.00</h1>
+      <label>in earnings</label><br />
+        <button ion-button outline round>Withdraw</button>
+    </div>
+
+    <div class="rentingDiv">
+        <h4>Items you're renting</h4>
+    </div>
+    </div>
+
+    <ion-scroll scrollX="true" style="width:100vw; height:30%" *ngIf="listItemsRenting?.length > 0">
+        <ion-row nowrap="nowrap" class="headerChip">
+            <div *ngFor="let item of listItemsRenting">
+                <ion-chip>
+                    <img src="{{ item.url }}" />
+                    <div></div>
+                </ion-chip>
+            </div>
+        </ion-row>
+    </ion-scroll>
+    <ion-scroll scrollX="true" style="width:100vw; height:15%" *ngIf="listItemsRenting?.length == 0">
+        <ion-row nowrap="nowrap" class="headerChip">
+            <div style="text-align:center;width: 100%">
+                <h5>No Rented Items</h5>
+                <div></div>
+            </div>
+        </ion-row>
+    </ion-scroll>
+    <div class="lendingDiv">
+        <h4>Items you're lending out</h4>
+    </div>
+    <ion-scroll scrollX="true" style="width:100vw; height:35%">
+        <ion-row nowrap="nowrap">
+            <div *ngFor="let item of listItemsLending">
+                <ion-chip>
+                    <img src="{{ item.url }}" />
+                    <div></div>
+                </ion-chip>
+            </div>
+            <div (click)="addItem()">
+                <ion-chip>
+                    <ion-icon name="add"></ion-icon>
+                    <div></div>
+                </ion-chip>
+            </div>
+        </ion-row>
+    </ion-scroll> -->
+</ion-content>

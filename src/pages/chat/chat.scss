@@ -1,0 +1,70 @@
+page-chat {
+    ion-header {
+        box-shadow: 0px 0px 10px lightgray;
+        height: 150px !important
+    }
+    .header {
+        width: 100%;
+        text-align: center !important;
+        background: white !important;
+    }
+    .header img {
+        height: 80px !important;
+        margin-top: 8%;
+        width: 80px !important;
+        border-radius: 50% !important;
+        padding: 1% !important;
+    }
+    .header h3 {
+        text-align: center !important;
+        margin-top: -2%;
+    }
+    .msg-sent {
+        padding: 3%;
+        border-radius: 10px 10px 0px 10px;
+        background: #2165CE;
+        box-shadow: 0px 4px 8px lightgray;
+        float: right;
+        clear: both;
+        max-width: 60%;
+        color: white;
+        margin-bottom: 2%;
+    }
+    .msg-received {
+        padding: 3%;
+        border-radius: 0px 10px 10px 10px;
+        background: white;
+        border: 1px solid rgb(233, 233, 233);
+        box-shadow: 0px 4px 8px lightgray;
+        float: left;
+        clear: both;
+        max-width: 60%;
+        margin-bottom: 2%
+    }
+    .msg-log {
+        clear: both;
+        text-align: center;
+        width: 100%;
+        color: gray;
+        font-size: 12px;
+    }
+    .msg-log-end {
+        clear: both;
+        text-align: center;
+        width: 100%;
+        color: #2165CE;
+        font-size: 12px;
+    }
+    .mediaMsg {
+        height: 100px;
+        width: 100px;
+    }
+    ion-icon {
+        font-size: 2em !important;
+        margin-top: 13%;
+        margin-left: 15%
+    }
+    ion-footer {
+        background: white !important;
+    }
+}

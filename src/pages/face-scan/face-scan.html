@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <!-- <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon> 
+            </button>
+        </ion-buttons> -->
+        <ion-title text-center>Add Profile Picture</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="body">
+        <label>Hey there, we just need to make sure you're a real person </label><br>
+        <img src="{{profilePicture}}"><br>
+        <div id="pwa">
+                <input type="file" id="pwa_photo" #pwa_photo accept="image/x-png,image/jpeg" (change)="uploadPWA()"> 
+            </div>
+        <button class="btnRent" (click)="addPicture()">Add a profile picture</button>
+        <button class="btnRent" (click)="next()" [disabled]="goToNext">Next</button>
+
+    </div>
+</ion-content>

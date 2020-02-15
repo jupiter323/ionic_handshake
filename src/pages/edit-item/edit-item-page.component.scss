@@ -1,0 +1,106 @@
+page-add-item {
+  .header {
+    height: 40px;
+    position: relative;
+    top: 5%;
+    width: 100%;
+  }
+  .header ion-icon {
+    color: black;
+    font-size: 30px;
+    position: relative;
+    top: 20%;
+    left: 10%;
+    font-weight: bold;
+  }
+  .header label {
+    position: relative;
+    left: 14%;
+    top: 16%;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .header .saveBtn {
+    color: #0089ff;
+    float: right;
+    margin-right: 20%;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .body {
+    margin: 5%;
+    padding: 2%;
+    position: relative;
+    top: 10%;
+    left: 10.5%;
+    color: #0089ff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .body .imgUpload {
+    // position: absolute;
+    // display: inline-block;
+    // right: 10%;
+    // height: 50px;
+    // width: 70px;
+    // box-shadow: 0px 4px 8px lightgray;
+    // top: -2%
+    display: inline-block;
+    height: 50px;
+    width: 70px;
+    -webkit-box-shadow: 0px 4px 8px lightgrey;
+    box-shadow: 0px 4px 8px lightgrey;
+  }
+  .imgUpload ion-icon {
+    // position: absolute;
+    // z-index: inherit;
+    // right: 28%;
+    // width: 30px;
+    // height: 30px;
+    // padding: 8%;
+    // border: 2px solid #0089ff;
+    // border-radius: 50%;
+    // top: 20%;
+    // text-align: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    border: 2px solid #0089ff;
+    border-radius: 50%;
+    text-align: center;
+    top: calc(47% - (30px/2));
+    left: calc(47% - (30px/2));
+  }
+  .imgUpload img {
+    height: 50px;
+    width: 80px;
+    border: 1px solid lightgray;
+    object-fit: cover;
+    object-position: center;
+  }
+  .body .sections {
+    margin-top: 20%;
+  }
+  .body .sections label {
+    color: #9b9b9b;
+  }
+  .body .sections span {
+    position: relative;
+    float: right;
+    right: 15%;
+    font-size: 14px;
+    margin-top: 0.5%;
+  }
+  .body .sections ion-item {
+    position: relative;
+    float: right;
+    width: 90%;
+    right: 15%;
+    font-size: 12px;
+    margin-top: 0.5%;
+  }
+  div#pwa {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,14 @@
+<ion-content>
+
+    <img src="{{img}}">
+
+    <div *ngIf="type == 0">
+        <button class="confirmBtn" ion-button (click)="conditionConfirmed()" [hidden]="confirm">Confirm <br>Condition</button>
+        <button class="rentalBtn" ion-button (click)="startRental()" [hidden]="rental">Start <br>Rental</button>
+    </div>
+
+    <div *ngIf="type == 1">
+        <button class="confirmBtn" ion-button (click)="conditionConfirmed()" [hidden]="confirm">Confirm <br>Condition</button>
+        <button class="rentalBtn" ion-button (click)="endRental()" [hidden]="rental">End <br>Rental</button>
+    </div>
+</ion-content>

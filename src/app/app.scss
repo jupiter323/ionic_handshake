@@ -1,0 +1,26 @@
+@import '../theme/fonts';
+ion-content {
+    font-family: "Avenir"
+}
+
+.mainDiv {
+    border: 1px solid gray;
+    display: flex;
+    text-align: center;
+    box-shadow: 0px 10px 8px black;
+    background: #36407794
+}
+
+.swal2-title,
+.swal2-actions {
+    font-family: "Avenir" !important
+}
+ion-app {
+    --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    margin-top: var(--safe-area-inset-top);
+    height: calc(100% - (var(--safe-area-inset-top))) !important;
+}
+.toolbar-ios {
+    padding-top: env(safe-area-inset-top);
+  }

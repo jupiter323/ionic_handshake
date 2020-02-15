@@ -1,0 +1,8 @@
+node_modules/
+.sourcemaps/
+www/
+resources/android/
+resources/ios/
+platforms/
+plugins/
+.idea/

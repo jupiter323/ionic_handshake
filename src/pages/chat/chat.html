@@ -1,0 +1,55 @@
+<ion-header>
+    <div class="header">
+        <img src="{{displayImg}}" />
+        <h3>{{ displayName }}</h3>
+    </div>
+</ion-header>
+<ion-content #content padding>
+    <div style="margin-top:5%">
+        <div *ngFor="let msg of messages" style="margin-top:10%">
+            <div *ngIf="msg.val.type == '0-Text'">
+                <div class="msg-sent">{{ msg.val.message }}</div>
+                <br />
+            </div>
+
+            <div *ngIf="msg.val.type == '0-Img'">
+                <div class="msg-sent"><img class="mediaMsg" src="{{ msg.val.message }}" (click)="openImage(msg.val.message)"></div>
+                <br />
+            </div>
+
+            <div *ngIf="msg.val.type == '3-Log'">
+                <div class="msg-log">{{ msg.val.message }}</div>
+            </div>
+
+            <div *ngIf="msg.val.type == '3-End'">
+                <div class="msg-log-end">{{ msg.val.message }}</div>
+            </div>
+
+            <div *ngIf="msg.val.type == '1-Text'">
+                <div class="msg-received">{{ msg.val.message }}</div>
+                <br />
+            </div>
+
+            <div *ngIf="msg.val.type == '1-Img'">
+                <div class="msg-received"><img class="mediaMsg" src="{{ msg.val.message }}" (click)="openImage(msg.val.message)"></div>
+                <br />
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer *ngIf="dealDone">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-2 (click)="verify()">
+                <ion-icon name="camera"></ion-icon>
+            </ion-col>
+            <ion-col col-8>
+                <ion-input type="text" placeholder="Enter message..." [(ngModel)]="chatMsg" name="message"></ion-input>
+            </ion-col>
+            <ion-col col-2 (click)="sendMessage()">
+                <ion-icon name="paper-plane"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

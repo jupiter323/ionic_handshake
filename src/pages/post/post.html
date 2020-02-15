@@ -1,0 +1,116 @@
+<ion-content>
+  <div *ngIf="show_calender" class="">
+      <div class="header">
+          Select Dates
+      </div>
+      <ion-calendar [(ngModel)]="dateRange" [options]="optionsRange" (onChange)="onChange($event)" [type]="type" [format]="'YYYY-MM-DD'">
+      </ion-calendar>
+  </div>
+  <ion-icon class="closeModal" name="close-circle" (click)="closeModal()"></ion-icon>
+  <div *ngIf="!show_calender" class='main-container'>
+      <ion-row>
+          <ion-col col-6>
+              <h3 class="user-name update-css-username">{{item.user_data.displayName}}</h3>
+              <p class="update-css-price">$<b>{{item.pricePerDay}} </b> per day</p>
+              <ionic3-star-rating class="rating" readonly="true" activeIcon="ios-star" defaultIcon="ios-star-outline"
+                  activeColor="#488aff" fontSize="14px" defaultColor="#111" readonly="true" [rating]="3">
+              </ionic3-star-rating>
+              <div class="details">
+                  <ion-row>
+                      <ion-col col-6>
+                          <p class="date-header">Pick-up</p>
+                          <p class="month">{{pick_up_month}}</p>
+                          <p class="day">{{pick_up_day}}</p>
+
+                      </ion-col>
+                      <ion-col col-6>
+                          <p class="date-header">Drop-off</p>
+                          <p class="month">{{drop_off_month}}</p>
+                          <p class="day">{{drop_off_day}}</p>
+
+                      </ion-col>
+                  </ion-row>
+              </div>
+
+
+          </ion-col>
+          <ion-col col-6>
+              <img class="itemImg" src="{{ item.url }}" />
+              <!-- <ion-slides pager>
+                  <ion-slide class="slide-container">
+                      <img class="itemImg" src="{{ item.url }}" />
+
+                  </ion-slide>
+
+              </ion-slides> -->
+
+
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <div class="item-price-detail">
+                  <ion-label>Fees & Taxes</ion-label>
+                  <p>$ {{item.pricePerDay}} X {{selected_days}} days</p>
+                  <p>Service Fee</p>
+                  <p>Tax</p>
+                  <p><b>Total</b></p>
+              </div>
+          </ion-col>
+          <ion-col>
+              <div class="item-price-cal">
+                  <ion-label class="label"></ion-label>
+                  <p>${{item.pricePerDay*selected_days}}</p>
+                  <p>$9</p>
+                  <p>$9</p>
+                  <p><b>${{(item.pricePerDay*selected_days)+9+9}}</b></p>
+              </div>
+          </ion-col>
+      </ion-row>
+
+  </div>
+
+  <div class="footer-div">
+      <button [disabled]="confirm_button_text=='Pending'" *ngIf="!show_calender" class="footer-btn-rent" (click)="confirmClick()">{{confirm_button_text}}</button>
+      <div *ngIf="show_calender">
+          <ion-row>
+              <ion-col col-6>
+                  <p class="p-text">{{selected_days}} days selected</p>
+              </ion-col> 
+              <ion-col col-6>
+                  <button [disabled]="selected_days==0" class="footer-btn-rent" (click)="nextClick()">Next</button>
+
+              </ion-col>
+
+          </ion-row>
+      </div>
+
+
+  </div>
+
+
+
+  <!-- <div class="MainDiv">
+      <p>I would like to rent this item for</p>
+
+      <ion-range min="0" max="10" color="#2165CE" [(ngModel)]="range">
+          <ion-label range-right>{{ range }}</ion-label>
+      </ion-range>
+
+      <div class="container">
+          <button class="{{ btnRentHour }}" (click)="rentItemForHours()">
+              Hours
+          </button>
+          <button class="{{ btnRentDay }}" (click)="rentItemForDays()">Days</button>
+      </div>
+
+      <p>
+          which will cost me
+          <label style="color: #1E90FF">${{ range * cost }}</label>
+      </p>
+
+      <button class="sendMsg" (click)="sendMsgToOwner()">
+          Message {{ owner }}
+      </button>
+  </div> -->
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-content>
+    <div class="header">
+        <ion-icon *ngIf="is_modal_open" name="close" (click)="closeModal()"></ion-icon>
+        <label>Add item</label>
+        <label class="saveBtn" (click)="saveItem()">Save</label>
+    </div>
+
+    <div class="body">
+        <section>
+            <label (click)="showAlert('Enter Item Name', 'itemName')">{{
+                itemName
+                }}</label>
+            <div id="pwa">
+                <input type="file" id="pwa_photo" #pwa_photo accept="image/x-png,image/jpeg"
+                       (change)="uploadPWA(selected_url)">
+            </div>
+            <ion-row>
+                <ion-col col-4>
+                    <div class="imgUpload" (click)="uploadHandler('url1')">
+                        <img src="{{ photo_url1 }}" *ngIf="photo_url1 != ''"/>
+                        <ion-icon name="add" *ngIf="photo_url1 == ''"></ion-icon>
+                    </div>
+                </ion-col>
+                <ion-col col-4>
+                    <div class="imgUpload" (click)="uploadHandler('url2')" *ngIf="photo_url1 != ''">
+                        <img src="{{ photo_url2 }}" *ngIf="photo_url2 != ''"/>
+                        <ion-icon name="add" *ngIf="photo_url2 == ''"></ion-icon>
+                    </div>
+                </ion-col>
+                <ion-col col-4>
+                    <div class="imgUpload" (click)="uploadHandler('url3')" *ngIf="photo_url1 != '' && photo_url2 != ''">
+                        <img src="{{ photo_url3 }}" *ngIf="photo_url3 != ''"/>
+                        <ion-icon name="add" *ngIf="photo_url3 == ''"></ion-icon>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+
+        </section>
+        <!--    <section class="sections" (click)="showAlert('Price per hour', 'pricePerHour')">-->
+        <!--      <label>Price Per Hour</label>-->
+        <!--      <span>${{ pricePerHour }}</span>-->
+        <!--    </section>-->
+        <section class="sections" (click)="showAlert('Price per day', 'pricePerDay')">
+            <label>Price Per Day</label>
+            <span>${{ pricePerDay }}</span>
+        </section>
+        <section class="sections" (click)="showAlert('Cost to replace', 'costToReplace')">
+            <label>Cost to replace</label>
+            <span>${{ costToReplace }}</span>
+        </section>
+        <section class="sections" (click)="openChooseLocationMapModal()">
+            <label>Item location</label>
+            <span *ngIf="!coords">--</span>
+            <span class="complete-tick" *ngIf="coords"><ion-icon item-right name="checkmark"></ion-icon></span>
+        </section>
+        <section class="sections" (click)="showAlert('Location', 'location')">
+            <label>Item Address Description</label>
+            <span>{{ location }}</span>
+        </section>
+        <section class="sections">
+            <label>Item Description</label>
+            <ion-item>
+                <ion-input type="text" placeholder="Start writing here" [(ngModel)]="description"></ion-input>
+            </ion-item>
+        </section>
+    </div>
+</ion-content>

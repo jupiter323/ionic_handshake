@@ -1,0 +1,7 @@
+{
+  "name": "grab-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

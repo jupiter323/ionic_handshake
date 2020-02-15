@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "103383459977",
+    "firebase_url": "https://handshake-f4f05.firebaseio.com",
+    "project_id": "handshake-f4f05",
+    "storage_bucket": "handshake-f4f05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103383459977:android:5c1bd330bc2c7ad5b1be58",
+        "android_client_info": {
+          "package_name": "com.vone.handshake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103383459977-4d49tt7hre3k6k9jue2vf1s9mm7mvuh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlsRoCOHP1whi7_2xFr2AS-mTBA6fNsgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103383459977-4d49tt7hre3k6k9jue2vf1s9mm7mvuh0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "103383459977-c7qlainmbjqunb7pk3gjn5hel60a8r1p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vone.handshake"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

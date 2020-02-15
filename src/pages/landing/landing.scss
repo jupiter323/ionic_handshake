@@ -1,0 +1,81 @@
+page-landing {
+  .scroll-content {
+    overflow: hidden !important;
+  }
+  .mainDiv {
+    height: 1500px;
+    width: 100%;
+    position: absolute;
+    // background: linear-gradient(to right, #0c007e, rgb(24, 118, 201));
+    background: linear-gradient(to right, #8a842d, #f9ff3c);
+
+    z-index: 1;
+    margin-top: -20%;
+    opacity: 0.65;
+  }
+  .bgImg {
+    background-image: URL("../../assets/imgs/Landing.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .landingTitle {
+    color: white;
+    font-size: 55px;
+    font-weight: 1000 !important;
+    margin-top: 2em !important;
+    z-index: 2;
+    position: relative;
+  }
+  .landingText {
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 2;
+    position: relative;
+  }
+  .landingFooter {
+    /* left: 14%; */
+    position: relative;
+    bottom: 3%;
+    text-align: center;
+    color: white;
+    z-index: 9;
+  }
+  .btnGoogle {
+    background-color: white;
+    height: 50px;
+    width: 90%;
+    color: #0c007e;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px;
+    z-index: 2;
+    position: relative;
+  }
+  .btnFacebook {
+    background-color: transparent;
+    border: solid;
+    height: 50px;
+    width: 90%;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px;
+    z-index: 2;
+    position: relative;
+  }
+  .btnEmail {
+    background-color: transparent;
+    height: 50px;
+    width: 90%;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px;
+    z-index: 2;
+    position: relative;
+  }
+}
