@@ -55,7 +55,7 @@
     "ionic-angular": "3.9.3",
     "ionic3-star-rating": "^2.0.1",
     "ionicons": "3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
     "sw-toolbox": "3.6.0",
